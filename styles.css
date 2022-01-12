@@ -1,0 +1,11 @@
+/*
+font-family: 'Goudy Bookletter 1911', serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Special Elite', cursive;
+*/
+.workspace-tabs .workspace-leaf .workspace-leaf-content .punctuation-panel {
+    background: #ffe5d3;
+    font-family: 'Goudy Bookletter 1911', serif;
+    font-size: 15px;
+    padding: 10px;
+}
