@@ -45,7 +45,7 @@ export default class JustThePunctuation extends Plugin {
 
 	updateView() {
 		const markdownView = this.app.workspace.getActiveViewOfType(MarkdownView);
-		this.punctuationView.update(markdownView.contentEl);
+		this.punctuationView.update(markdownView);
 	}
 
 	onunload() {
@@ -72,7 +72,6 @@ class PunctuationView extends ItemView {
 	}
 
 	async onOpen() {
-		console.log("ON OPEN")
 		const container = this.containerEl.children[1];
 		const contentEl = this.contentEl;
 		if (!contentEl.hasClass('punctuation-panel')) {
@@ -82,8 +81,9 @@ class PunctuationView extends ItemView {
 		contentEl.innerText = '...'
 	}
 
-	update(source: HTMLElement) {
-		const punctuation = this.punctuationFrom(source.innerText);
+	update(source: MarkdownView) {
+		const text = source.data
+		const punctuation = this.punctuationFrom(text);
 		const display = punctuation.map(c => String.fromCharCode(c)).join(' ');
 
 		const contentEl = this.contentEl;
