@@ -72,12 +72,10 @@ class PunctuationView extends ItemView {
 	}
 
 	async onOpen() {
-		const container = this.containerEl.children[1];
 		const contentEl = this.contentEl;
 		if (!contentEl.hasClass('punctuation-panel')) {
 			contentEl.addClass('punctuation-panel');
 		}
-    container.empty();
 		contentEl.innerText = '...'
 	}
 
